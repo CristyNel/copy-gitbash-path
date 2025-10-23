@@ -1,0 +1,43 @@
+{
+  "name": "copy-gitbash-path",
+  "displayName": "Copy Git Bash Path",
+  "description": "Adds a right-click option to copy file path in Git Bash format",
+  "version": "0.0.7",
+  "publisher": "Cristinel",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "icon": "vscode_path_cut.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CristyNel/copy-gitbash-path"
+  },
+  "main": "./extension.js",
+  "activationEvents": [
+    "onCommand:extension.copyGitBashPath"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.copyGitBashPath",
+        "title": "Copy Git Bash Path"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "extension.copyGitBashPath",
+          "when": "resourceLangId != ''",
+          "group": "navigation"
+        }
+      ],
+      "editor/title/context": [
+        {
+          "command": "extension.copyGitBashPath",
+          "when": "resourceLangId != ''",
+          "group": "1_copy"
+        }
+      ]
+    }
+  }
+}
